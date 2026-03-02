@@ -367,7 +367,6 @@
             transform: scale(1.05);
         }
 
-        /* Frame 1: Picasso - Portrait orientation */
         .art-frame:nth-child(1) {
             width: 260px;
             height: 340px;
@@ -376,7 +375,6 @@
             transform: rotate(-3deg);
         }
 
-        /* Frame 2: Heritage/Museum - Landscape orientation */
         .art-frame:nth-child(2) {
             width: 280px;
             height: 180px;
@@ -385,7 +383,6 @@
             transform: rotate(4deg);
         }
 
-        /* Frame 3: Whaam Comic - Wide landscape */
         .art-frame:nth-child(3) {
             width: 300px;
             height: 160px;
@@ -858,8 +855,88 @@
             text-align: right;
         }
 
+        /* Submission Banner */
+        .submission-banner {
+            margin-top: 3rem;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, var(--ultramarine), var(--violet));
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submission-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .submission-banner-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--ochre);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .submission-banner h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .submission-banner p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .submission-banner .track-note {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ochre);
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(201, 162, 39, 0.4);
+            display: inline-block;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background: var(--white);
+            color: var(--black);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-submit:hover {
+            background: var(--ochre);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
         .presentation-info {
-            margin-top: 4rem;
+            margin-top: 2rem;
             padding: 3rem;
             background: var(--black);
             color: var(--white);
@@ -1232,6 +1309,10 @@
             .footer-right {
                 text-align: center;
             }
+
+            .submission-banner {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1525,6 +1606,15 @@
             </div>
         </div>
 
+        <div class="submission-banner">
+            <span class="submission-banner-label">Submission Portal</span>
+            <h4>Submit via OpenReview</h4>
+            <p>There are two tracks — please submit to the appropriate track (Extended Abstract or Long Paper) on the submission site.</p>
+            <div class="track-note">⚠ Select the correct track when submitting</div>
+            <br>
+            <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/AI4VA" target="_blank" class="btn-submit">Submit on OpenReview ↗</a>
+        </div>
+
         <div class="presentation-info">
             <div class="presentation-icon">◎</div>
             <div>
@@ -1607,7 +1697,6 @@
     </section>
 
     <section id="sponsors">
-    <section id="sponsors">
         <span class="section-label">Support</span>
         <h2 class="section-title">Become a Sponsor</h2>
         <p class="sponsor-text">Interested in supporting the intersection of AI and visual arts? We welcome partners who share our vision for trustworthy, human-aligned AI in creative domains.</p>
@@ -1628,7 +1717,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Custom cursor
         const cursor = document.getElementById('cursor');
         let mouseX = 0, mouseY = 0;
@@ -1685,4 +1774,12 @@
         document.addEventListener('mousemove', (e) => {
             const strokes = document.querySelectorAll('.paint-stroke');
             const x = (e.clientX / window.innerWidth - 0.5) * 30;
-            const y = (e.clientY / win
+            const y = (e.clientY / window.innerHeight - 0.5) * 30;
+            strokes.forEach((stroke, i) => {
+                const speed = (i + 1) * 0.5;
+                stroke.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

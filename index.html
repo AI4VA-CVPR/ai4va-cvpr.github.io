@@ -9,14 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Core palette — unchanged */
             --vermillion: #e63b2e;
             --ultramarine: #1e3a8a;
             --ochre: #c9a227;
             --violet: #5b21b6;
             --forest: #14532d;
             --gold: #c9a227;
-            /* Global dark palette */
             --bg: #0c0e14;
             --bg-alt: #111520;
             --bg-surface: #171c28;
@@ -44,7 +42,6 @@
         }
         ::selection { background: var(--vermillion); color: var(--white); }
 
-        /* Global link styles — larger */
         a { color: var(--ochre); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(201,162,39,0.35); transition: color 0.2s ease, text-decoration-color 0.2s ease; font-size: 1.05em; }
         a:hover { color: var(--vermillion); text-decoration-color: var(--vermillion); }
 
@@ -56,12 +53,7 @@
         }
 
         /* ── NAV ── */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 1.5rem 3rem; display: flex;
-            justify-content: space-between; align-items: center;
-            mix-blend-mode: difference;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; mix-blend-mode: difference; }
         .nav-logo { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.3em; color: var(--white); text-transform: uppercase; text-decoration: none; }
         .nav-links { display: flex; gap: 2.2rem; list-style: none; }
         .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--white); text-decoration: none; text-transform: uppercase; position: relative; }
@@ -189,6 +181,62 @@
         .presentation-info h4 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-bright); }
         .presentation-info p { font-size: 1.1rem; color: var(--text); line-height: 1.75; }
 
+        /* ── POSTER INFO ── */
+        .poster-info-block { margin-top: 2rem; background: var(--bg-surface); border: 1px solid var(--border); padding: 2.5rem; }
+        .poster-info-block h4 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-bright); margin-bottom: 1rem; }
+        .poster-info-block h4:not(:first-of-type) { margin-top: 2rem; }
+        .poster-info-block p { font-size: 1.1rem; color: var(--text); line-height: 1.8; margin-bottom: 0.75rem; }
+        .poster-info-block p strong { color: var(--text-bright); }
+        .poster-info-block a { color: var(--ochre); }
+        .poster-info-block a:hover { color: var(--vermillion); }
+        .poster-info-block ul { margin: 0.5rem 0 1rem 1.5rem; }
+        .poster-info-block ul li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.4rem; }
+        .poster-info-block ul li strong { color: var(--text-bright); }
+        .poster-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
+        .poster-price-card { padding: 1.25rem 1.5rem; background: var(--bg-elevated); border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; }
+        .poster-price-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .poster-price-card .price-tier { font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ochre); margin-bottom: 0.4rem; }
+        .poster-price-card .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--text-bright); line-height: 1.2; margin-bottom: 0.3rem; }
+        .poster-price-card .price-note { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
+        .poster-warning { margin: 1.25rem 0; padding: 1rem 1.25rem; background: rgba(230,59,46,0.08); border-left: 3px solid var(--vermillion); font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-bright); line-height: 1.65; }
+        .poster-pickup-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .poster-pickup-table th, .poster-pickup-table td { font-family: 'Space Mono', monospace; font-size: 0.85rem; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        .poster-pickup-table th { color: var(--ochre); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.7rem; }
+        .poster-pickup-table td { color: var(--text); }
+        .poster-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+        .poster-contact-card { padding: 1.25rem; background: var(--bg-elevated); border: 1px solid var(--border); }
+        .poster-contact-card h5 { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ochre); margin-bottom: 0.5rem; }
+        .poster-contact-card p { font-size: 0.95rem; color: var(--text); line-height: 1.65; margin-bottom: 0.25rem; }
+
+        /* ── PROGRAM ── */
+        #program { background: var(--bg); position: relative; }
+        #program .section-label { color: var(--vermillion); }
+        #program .section-label::before { background: var(--vermillion); }
+        .program-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .program-table tr { border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
+        .program-table tr:hover { background: rgba(255,255,255,0.02); }
+        .program-table td { padding: 1.1rem 1.25rem; vertical-align: top; }
+        .program-table .prog-time { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--vermillion); white-space: nowrap; width: 130px; padding-top: 1.25rem; }
+        .program-table .prog-session { font-size: 1.15rem; color: var(--text-bright); line-height: 1.5; }
+        .program-table .prog-detail { font-size: 0.95rem; color: var(--text-muted); margin-top: 0.15rem; }
+        .program-table tr.prog-break { background: rgba(201,162,39,0.04); }
+        .program-table tr.prog-break .prog-session { color: var(--ochre); }
+        .program-table tr.prog-highlight { background: rgba(230,59,46,0.04); }
+        .program-table tr.prog-highlight .prog-session { color: var(--ochre); }
+        .program-date-banner { display: inline-flex; align-items: center; gap: 1rem; padding: 0.75rem 1.5rem; background: var(--bg-surface); border: 1px solid var(--border); margin-bottom: 2rem; }
+        .program-date-banner .pdb-date { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--text-bright); }
+        .program-date-banner .pdb-loc { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
+        @media (max-width: 768px) {
+            .program-table .prog-time { display: block; width: auto; padding-bottom: 0; }
+            .program-table td { display: block; padding: 0.5rem 1rem; }
+            .program-table tr { padding: 0.5rem 0; }
+        }
+
+        /* ── LOGISTICS ── */
+        #logistics { background: var(--bg-alt); position: relative; }
+        #logistics .section-label { color: var(--ochre); }
+        #logistics .section-label::before { background: var(--ochre); }
+
         /* ── CHALLENGES ── */
         #challenges { background: var(--bg-alt); color: var(--white); position: relative; padding: 5rem 4rem; }
         #challenges .section-label { color: var(--ochre); }
@@ -196,17 +244,14 @@
         #challenges .section-title { color: var(--text-bright); }
         .challenges-intro { font-size: 1.3rem; line-height: 1.85; color: var(--text); max-width: none; margin-bottom: 2rem; }
         .challenges-intro strong { color: var(--text-bright); }
-
         .pc-header { display: flex; align-items: center; gap: 2rem; margin-bottom: 1.75rem; padding: 1.75rem 2rem; background: var(--bg-surface); border: 1px solid var(--border); }
         .pc-header img { height: 90px; width: auto; display: block; }
         .pc-header-text h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; margin: 0 0 0.3rem; color: var(--text-bright); text-align: left; }
         .pc-header-text p { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em; margin: 0; text-align: left; }
         .pc-header-text p .pc-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); margin: 0 0.5rem; vertical-align: middle; }
-
         .challenge-subnav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
         .challenge-subnav a { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; padding: 0.35rem 0; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
         .challenge-subnav a:hover { color: var(--white); border-bottom-color: var(--ochre); }
-
         .challenge-subsection { margin-bottom: 0; padding-bottom: 2rem; }
         .challenge-subsection-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ochre); margin-bottom: 0.5rem; }
         .challenge-subsection h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.15; margin-bottom: 1rem; color: var(--text-bright); text-align: left; }
@@ -217,7 +262,6 @@
         .challenge-subsection ul { margin: 0 0 1rem 1.5rem; }
         .challenge-subsection ul li { font-size: 1.15rem; line-height: 1.8; color: var(--text); margin-bottom: 0.5rem; }
         .challenge-subsection ul li strong { color: var(--text-bright); }
-
         .challenge-tracks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border-strong); }
         .challenge-track-card { padding: 2.25rem; background: var(--bg-surface); position: relative; transition: all 0.4s ease; }
         .challenge-track-card:first-child { border-right: 1px solid var(--border-strong); }
@@ -228,13 +272,11 @@
         .challenge-track-desc { font-size: 1.15rem; color: var(--text); line-height: 1.75; }
         .challenge-track-link { display: inline-block; margin-top: 0.85rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--ochre); text-decoration: none; transition: color 0.4s ease; }
         .challenge-track-link:hover { color: var(--vermillion); }
-
         .challenge-timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); margin: 1rem 0; max-width: 460px; }
         .challenge-timeline-item { padding: 1.25rem 1.5rem; background: var(--bg-surface); }
         .challenge-timeline-item:first-child { border-right: 1px solid var(--border); }
         .challenge-timeline-item dt { font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--vermillion); margin-bottom: 0.35rem; }
         .challenge-timeline-item dd { font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--text-bright); }
-
         .challenge-figure-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.25rem 0; }
         .challenge-figure { background: var(--bg-surface); border: 1px solid var(--border); padding: 0.6rem; transition: all 0.4s ease; }
         .challenge-figure:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
@@ -242,20 +284,15 @@
         .challenge-figure .img-frame img { max-width:100%; max-height:100%; display: block; object-fit: contain; }
         .challenge-figure figcaption { text-align: center; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
         .challenge-disclaimer { margin: 0.85rem 0 1rem; padding: 0.85rem 1.25rem; background: rgba(201,162,39,0.06); border-left: 3px solid var(--ochre); font-style: italic; color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
-
         .challenge-prompt { margin-top: 1rem; padding: 1.5rem; background: var(--bg-surface); border: 1px solid var(--border); }
         .challenge-prompt p { font-size: 1.15rem; line-height: 1.85; color: var(--text); margin-bottom: 0.75rem; }
         .challenge-prompt p:last-child { margin-bottom: 0; }
         .challenge-prompt .prompt-tags { margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px dashed var(--border); font-style: italic; color: var(--text-muted); }
         .challenge-prompt .prompt-ellipsis { text-align: center; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 1.2rem; margin: 0.25rem 0; }
-
         .challenge-co-org { margin-top: 2rem; padding: 1.25rem 2rem; background: var(--bg-surface); border: 1px solid var(--border); display: flex; align-items: center; gap: 1.5rem; }
         .challenge-co-org span { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; }
         .challenge-co-org strong { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--ochre); }
-
         .challenge-divider { width: 100%; height: 1px; background: var(--border); margin: 2rem 0; }
-
-        /* Challenge Awards */
         .challenge-awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
         .challenge-award-card { padding: 1.75rem 2rem; background: var(--bg-surface); border: 1px solid var(--border); position: relative; overflow: hidden; transition: all 0.4s ease; }
         .challenge-award-card::before { content:''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--ochre), var(--vermillion)); }
@@ -360,6 +397,8 @@
             .challenge-figure-row { grid-template-columns: 1fr; }
             .challenge-awards-grid { grid-template-columns: 1fr; }
             .pc-header { flex-direction: column; text-align: center; }
+            .poster-pricing-grid { grid-template-columns: 1fr; }
+            .poster-contact-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -381,7 +420,7 @@
     <nav>
         <div class="nav-logo">AI4VA</div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li><li><a href="#topics">Topics</a></li><li><a href="#dates">Dates</a></li><li><a href="#participate">Participate</a></li><li><a href="#challenges">Challenges</a></li><li><a href="#awards">Awards</a></li><li><a href="#speakers">Speakers</a></li><li><a href="#committee">Committee</a></li><li><a href="#sponsors">Sponsors</a></li><li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li><li><a href="#topics">Topics</a></li><li><a href="#dates">Dates</a></li><li><a href="#program">Program</a></li><li><a href="#participate">Papers</a></li><li><a href="#challenges">Challenges</a></li><li><a href="#awards">Awards</a></li><li><a href="#speakers">Speakers</a></li><li><a href="#logistics">Logistics</a></li><li><a href="#committee">Committee</a></li><li><a href="#sponsors">Sponsors</a></li><li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -439,29 +478,79 @@
         <div class="dates-layout">
             <div class="date-highlight"><div class="date-highlight-box"><span class="date-month">June</span><span class="date-day">3</span><span class="date-year">2026 · 8:30 AM – 1:00 PM</span><div class="date-location">Room 4AB<br>Colorado Convention Center<br>Denver, Colorado, USA</div></div></div>
             <div class="timeline">
-                <div class="timeline-section"><h3 class="timeline-section-title">Full Papers (Archival)- Deadline Passed</h3><div class="timeline-item"><span class="timeline-date">Mar 13, 2026</span><div class="timeline-content"><h4>Full Paper Submission Deadline</h4><p>Friday, 11:59 PM AoE</p></div></div><div class="timeline-item"><span class="timeline-date">Mar 30, 2026</span><div class="timeline-content"><h4>Acceptance Notification</h4><p>Announced</p></div></div><div class="timeline-item"><span class="timeline-date">Mar 30, 2026</span><div class="timeline-content"><h4>Camera-Ready Site Opens</h4><p>Monday — for accepted full papers only</p></div></div><div class="timeline-item"><span class="timeline-date">Apr 10, 2026</span><div class="timeline-content"><h4>Camera-Ready & Copyright Due</h4><p>Friday — final papers and forms</p></div></div></div>
-                <div class="timeline-section"><h3 class="timeline-section-title">Extended Abstracts (Non-Archival)- Accepting Submissions</h3><div class="timeline-item"><span class="timeline-date">Apr 25, 2026</span><div class="timeline-content"><h4>Extended Abstract Submission</h4><p>Saturday, 11:59 PM AoE — new deadline</p></div></div><div class="timeline-item"><span class="timeline-date">May 05, 2026</span><div class="timeline-content"><h4>Acceptance Notification</h4><p>Tuesday, 11:59 PM AoE — no camera-ready required</p></div></div></div>
-                <div class="timeline-section"><h3 class="timeline-section-title">PortraitCraft Challenge- Accepting Submissions</h3><div class="timeline-item"><span class="timeline-date">Apr 5, 2026</span><div class="timeline-content"><h4>Challenge Start</h4><p>Competition opens on CodaBench</p></div></div><div class="timeline-item"><span class="timeline-date">May 17, 2026</span><div class="timeline-content"><h4>Challenge End</h4><p>Final submission deadline</p></div></div></div>
+                <div class="timeline-section"><h3 class="timeline-section-title">Full Papers (Archival) — Deadlines Passed</h3><div class="timeline-item"><span class="timeline-date">Mar 13, 2026</span><div class="timeline-content"><h4>Full Paper Submission Deadline</h4><p>Friday, 11:59 PM AoE</p></div></div><div class="timeline-item"><span class="timeline-date">Mar 30, 2026</span><div class="timeline-content"><h4>Acceptance Notification</h4><p>Announced</p></div></div><div class="timeline-item"><span class="timeline-date">Mar 30, 2026</span><div class="timeline-content"><h4>Camera-Ready Site Opens</h4><p>Monday — for accepted full papers only</p></div></div><div class="timeline-item"><span class="timeline-date">Apr 10, 2026</span><div class="timeline-content"><h4>Camera-Ready &amp; Copyright Due</h4><p>Friday — final papers and forms</p></div></div></div>
+                <div class="timeline-section"><h3 class="timeline-section-title">Extended Abstracts (Non-Archival) — Deadlines Passed</h3><div class="timeline-item"><span class="timeline-date">Apr 25, 2026</span><div class="timeline-content"><h4>Extended Abstract Submission</h4><p>Saturday, 11:59 PM AoE — new deadline</p></div></div><div class="timeline-item"><span class="timeline-date">May 05, 2026</span><div class="timeline-content"><h4>Acceptance Notification</h4><p>Tuesday, 11:59 PM AoE — no camera-ready required</p></div></div></div>
+                <div class="timeline-section"><h3 class="timeline-section-title">PortraitCraft Challenge — Accepting Submissions</h3><div class="timeline-item"><span class="timeline-date">Apr 5, 2026</span><div class="timeline-content"><h4>Challenge Start</h4><p>Competition opens on CodaBench</p></div></div><div class="timeline-item"><span class="timeline-date">May 17, 2026</span><div class="timeline-content"><h4>Challenge End</h4><p>Final submission deadline</p></div></div></div>
                 <div class="timeline-item" style="border-bottom: none; background: rgba(255,255,255,0.02); padding: 1.25rem;"><span class="timeline-date">Jun 3, 2026</span><div class="timeline-content"><h4>Workshop Day</h4><p>8:30 AM – 1:00 PM · Room 4AB, Colorado Convention Center, Denver</p></div></div>
                 <div class="timeline-notice">All deadlines are AoE (Anywhere on Earth). Full papers appear in CVPR Workshop Proceedings. Extended abstracts are non-archival.</div>
             </div>
         </div>
     </section>
 
-    <section id="participate">
-        <span class="section-number">04</span><span class="section-label">Call for Papers</span>
-        <h2 class="section-title">Submit Your Work</h2>
-        <div class="tracks-container">
-            <div class="track"><span class="track-number">Track I — Archival</span><h3>Full Papers- Deadline Passed</h3><p>Novel, previously unpublished research. Accepted papers appear in the official CVPR 2026 Workshop Proceedings.</p><div class="track-specs"><dl><dt>Length</dt><dd>5–8 pages</dd><dt>Format</dt><dd>CVPR 2026 Style</dd><dt>Review</dt><dd>Double-blind</dd><dt>Supplementary</dt><dd>Optional</dd></dl></div></div>
-            <div class="track"><span class="track-number">Track II — Non-Archival</span><h3>Extended Abstracts- Accepting Submissions</h3><p>New, previously, or concurrently published research or work-in-progress. Will not appear in proceedings.</p><div class="track-specs"><dl><dt>Length</dt><dd>2 pages</dd><dt>Format</dt><dd>CVPR 2026 Style</dd><dt>Review</dt><dd>Double-blind</dd><dt>Camera-Ready</dt><dd>Not required</dd></dl></div></div>
+    <section id="program">
+        <span class="section-number">04</span><span class="section-label">Schedule</span>
+        <h2 class="section-title">Workshop Program</h2>
+        <div class="program-date-banner">
+            <span class="pdb-date">Tuesday, June 3, 2026</span>
+            <span class="pdb-loc">8:30 AM – 12:30 PM · Room 4AB</span>
         </div>
-        <div class="submission-banner"><span class="submission-banner-label">Submission Portal</span><h4>Submit via OpenReview</h4><p>There are two tracks — please submit to the appropriate track (Extended Abstract or Long Paper) on the submission site.</p><div class="track-note">⚠ Select the correct track when submitting</div><br><a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/AI4VA" target="_blank" class="btn-submit">Submit on OpenReview ↗</a></div>
-        <div class="presentation-info"><div class="presentation-icon">◎</div><div><h4>Presentation Guidelines</h4><p>All posters: portrait orientation, max 90 × 180 cm. All accepted papers present a poster. Selected oral spotlight presenters: 7 min talk + Q&A, plus poster presentation.</p></div></div>
+        <table class="program-table">
+            <tr>
+                <td class="prog-time">08:30 – 08:35</td>
+                <td><div class="prog-session">Welcome and Introduction</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">08:35 – 09:00</td>
+                <td><div class="prog-session">Keynote 1</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">09:00 – 09:25</td>
+                <td><div class="prog-session">Keynote 2</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">09:25 – 09:50</td>
+                <td><div class="prog-session">Challenge Winner Presentations</div><div class="prog-detail">4 × 5 min talks + 5 min shared Q&amp;A</div></td>
+            </tr>
+            <tr class="prog-highlight">
+                <td class="prog-time">09:50 – 10:00</td>
+                <td><div class="prog-session">Award Ceremony</div></td>
+            </tr>
+            <tr class="prog-break">
+                <td class="prog-time">10:00 – 11:00</td>
+                <td><div class="prog-session">Coffee Break &amp; Poster Session (Exhibit Hall A)</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">11:00 – 11:25</td>
+                <td><div class="prog-session">Keynote 3</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">11:25 – 11:50</td>
+                <td><div class="prog-session">Keynote 4</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">11:50 – 12:10</td>
+                <td><div class="prog-session">Archival Paper Presentations</div><div class="prog-detail">2 papers · 7 min presentation + 3 min Q&amp;A each</div></td>
+            </tr>
+            <tr>
+                <td class="prog-time">12:10 – 12:30</td>
+                <td><div class="prog-session">Panel Discussion and Closing Remarks</div></td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="participate">
+        <span class="section-number">05</span><span class="section-label">Call for Papers</span>
+        <h2 class="section-title">Submissions Closed</h2>
+        <div class="tracks-container">
+            <div class="track"><span class="track-number">Track I — Archival</span><h3>Full Papers — Submissions Closed</h3><p>Novel, previously unpublished research. Accepted papers appear in the official CVPR 2026 Workshop Proceedings.</p><div class="track-specs"><dl><dt>Length</dt><dd>5–8 pages</dd><dt>Format</dt><dd>CVPR 2026 Style</dd><dt>Review</dt><dd>Double-blind</dd><dt>Supplementary</dt><dd>Optional</dd></dl></div></div>
+            <div class="track"><span class="track-number">Track II — Non-Archival</span><h3>Extended Abstracts — Submissions Closed</h3><p>New, previously, or concurrently published research or work-in-progress. Will not appear in proceedings.</p><div class="track-specs"><dl><dt>Length</dt><dd>2 pages</dd><dt>Format</dt><dd>CVPR 2026 Style</dd><dt>Review</dt><dd>Double-blind</dd><dt>Camera-Ready</dt><dd>Not required</dd></dl></div></div>
+        </div>
+        <div class="timeline-notice" style="margin-top:1.5rem;">Submissions for both tracks are now closed. Thank you to all authors who submitted their work.</div>
     </section>
 
     <section id="challenges">
-        <span class="section-number">05</span><span class="section-label">Competition</span>
-        <h2 class="section-title">PortraitCraft Challenge</h2>
+        <span class="section-number">06</span><span class="section-label">Competition</span>
+        <h2 class="section-title">PortraitCraft Challenge- Accepting Submissions</h2>
         <p class="challenges-intro">The AI4VA Image Composition Challenge (<strong>PortraitCraft</strong>) features two competitive tracks that push the boundaries of AI-driven portrait composition understanding and generation. Participants are invited to develop novel methods for analysing and composing portrait imagery in artistic contexts.</p>
         <div class="pc-header"><img src="assets/images/pc-logo-v2.png" alt="PortraitCraft logo" /><div class="pc-header-text"><h3>PortraitCraft Challenge</h3><p>Image Composition<span class="pc-dot"></span>Portrait Understanding &amp; Generation</p></div></div>
         <div class="challenge-subnav"><a href="#challenge-dataset">Dataset</a><a href="#challenge-schedule">Schedule</a><a href="#challenge-tracks-overview">Tracks Overview</a><a href="#challenge-track1">Track 1 — Understanding</a><a href="#challenge-track2">Track 2 — Generation</a><a href="#challenge-prizes">Prizes</a></div>
@@ -493,21 +582,97 @@
         <div class="challenge-co-org"><span>Co-organised by</span><strong>Meitu</strong></div>
     </section>
 
-    <section id="awards"><span class="section-number">06</span><span class="section-label">Recognition</span><h2 class="section-title">Workshop Awards</h2><div class="awards-grid"><div class="award-card"><div class="award-icon">🏆</div><h3>Best Paper Award</h3><div class="award-amount">$1,000</div><p>Awarded to the highest-quality full paper submission demonstrating novelty, rigour, and impact at the intersection of AI and visual arts.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div><div class="award-card"><div class="award-icon">🎖️</div><h3>Best Poster Award</h3><div class="award-amount">$500</div><p>Awarded for an outstanding poster presentation that effectively communicates innovative research to the workshop audience.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div></div><div class="awards-ceremony-note">All winners will be felicitated in the workshop award ceremony with certificates.</div></section>
+    <section id="awards"><span class="section-number">07</span><span class="section-label">Recognition</span><h2 class="section-title">Workshop Awards</h2><div class="awards-grid"><div class="award-card"><div class="award-icon">🏆</div><h3>Best Paper Award</h3><div class="award-amount">$1,000</div><p>Awarded to the highest-quality full paper submission demonstrating novelty, rigour, and impact at the intersection of AI and visual arts.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div><div class="award-card"><div class="award-icon">🎖️</div><h3>Best Poster Award</h3><div class="award-amount">$500</div><p>Awarded for an outstanding poster presentation that effectively communicates innovative research to the workshop audience.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div></div><div class="awards-ceremony-note">All winners will be felicitated in the workshop award ceremony with certificates.</div></section>
 
-    <section id="speakers"><span class="section-number">07</span><span class="section-label">Keynotes</span><h2 class="section-title">Invited Speakers</h2><div class="speakers-grid"><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/Hadar.jpeg" alt="Hadar Averbuch-Elor" /></div><h4 class="speaker-name"><a href="https://www.hadarelor.com/" target="_blank">Hadar Averbuch-Elor</a></h4><p class="speaker-affiliation">Cornell University & Cornell Tech</p><p class="speaker-bio">Assistant Professor in Computer Science. Her research combines images, language and 3D geometry for building multimodal perception systems that can handle the full complexity of the real 3D world.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/ranjay_krishna.jpeg" alt="Ranjay Krishna" /></div><h4 class="speaker-name"><a href="https://www.ranjaykrishna.com/index.html" target="_blank">Ranjay Krishna</a></h4><p class="speaker-affiliation">University of Washington & Allen Institute for AI</p><p class="speaker-bio">Assistant Professor at the Allen School. Co-directs the RAIVN lab at UW and directs the PRIOR team at AI2. His research lies at the intersection of computer vision, NLP, robotics, and HCI.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/luba_elliott.png" alt="Luba Elliott" /></div><h4 class="speaker-name"><a href="https://elluba.com/about/" target="_blank">Luba Elliott</a></h4><p class="speaker-affiliation">Curator & Researcher, Creative AI</p><p class="speaker-bio">Curator, producer and researcher specialising in AI in the creative industries. Honorary Senior Research Fellow at UCL Centre for Artificial Intelligence.</p></div><div class="speaker-card"><span class="speaker-status pending">TBC</span><div class="speaker-avatar">?</div><h4 class="speaker-name">To Be Confirmed</h4><p class="speaker-affiliation">TBC</p><p class="speaker-bio">The fourth keynote speaker will be announced soon. Please check back for updates.</p></div></div></section>
+    <section id="speakers"><span class="section-number">08</span><span class="section-label">Keynotes</span><h2 class="section-title">Invited Speakers</h2><div class="speakers-grid"><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/Hadar.jpeg" alt="Hadar Averbuch-Elor" /></div><h4 class="speaker-name"><a href="https://www.hadarelor.com/" target="_blank">Hadar Averbuch-Elor</a></h4><p class="speaker-affiliation">Cornell University &amp; Cornell Tech</p><p class="speaker-bio">Assistant Professor in Computer Science. Her research combines images, language and 3D geometry for building multimodal perception systems that can handle the full complexity of the real 3D world.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/ranjay_krishna.jpeg" alt="Ranjay Krishna" /></div><h4 class="speaker-name"><a href="https://www.ranjaykrishna.com/index.html" target="_blank">Ranjay Krishna</a></h4><p class="speaker-affiliation">University of Washington &amp; Allen Institute for AI</p><p class="speaker-bio">Assistant Professor at the Allen School. Co-directs the RAIVN lab at UW and directs the PRIOR team at AI2. His research lies at the intersection of computer vision, NLP, robotics, and HCI.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/luba_elliott.png" alt="Luba Elliott" /></div><h4 class="speaker-name"><a href="https://elluba.com/about/" target="_blank">Luba Elliott</a></h4><p class="speaker-affiliation">Curator &amp; Researcher, Creative AI</p><p class="speaker-bio">Curator, producer and researcher specialising in AI in the creative industries. Honorary Senior Research Fellow at UCL Centre for Artificial Intelligence.</p></div><div class="speaker-card"><span class="speaker-status pending">TBC</span><div class="speaker-avatar">?</div><h4 class="speaker-name">To Be Confirmed</h4><p class="speaker-affiliation">TBC</p><p class="speaker-bio">The fourth keynote speaker will be announced soon. Please check back for updates.</p></div></div></section>
 
-    <section id="committee"><span class="section-number">08</span><span class="section-label">Organizers</span><h2 class="section-title">Organizing Committee</h2><div class="organizers-grid"><div class="organizer-card"><img class="organizer-photo" src="assets/images/deblina_bhattacharjee.jpeg" alt="Deblina Bhattacharjee" /><span class="organizer-role">Lead Organizer</span><h4 class="organizer-name">Deblina Bhattacharjee</h4><p class="organizer-affiliation">Assistant Professor, University of Bath, UK (Publicity Co-Chair, CVPR)</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/yin_zhang.jpeg" alt="Yin Zhang" /><span class="organizer-role">Organizer</span><h4 class="organizer-name"><a href="https://www.linkedin.com/in/yinzhang-unige/" target="_blank">Iris (Yin) Zhang</a></h4><p class="organizer-affiliation">PhD in Translation Studies, University of Geneva</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/bingchen_zhao.png" alt="Bingchen Zhao" /><span class="organizer-role">Organizer</span><h4 class="organizer-name"><a href="https://bzhao.me/" target="_blank">Bingchen Zhao</a></h4><p class="organizer-affiliation">PhD in Computer Science, University of Edinburgh</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/Haoxiang_Li.jpeg" alt="Haoxiang Li" /><span class="organizer-role">Challenge Co-Organizer</span><h4 class="organizer-name"><a href="https://resume.haoxiang.org" target="_blank">Haoxiang Li</a></h4><p class="organizer-affiliation">Meitu Inc. (Pixocial Technology)</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/Luoqi_Li.jpeg" alt="Luoqi Liu" /><span class="organizer-role">Challenge Co-Organizer</span><h4 class="organizer-name"><a href="https://scholar.google.com/citations?user=nw4XTwMAAAAJ&hl=en" target="_blank">Luoqi Liu</a></h4><p class="organizer-affiliation">VP of Technology, Meitu Inc.</p></div></div></section>
+    <section id="logistics">
+        <span class="section-number">09</span><span class="section-label">Attending</span>
+        <h2 class="section-title">Logistics for Presenters</h2>
 
-    <section id="sponsors"><span class="section-label">Support</span><h2 class="section-title">Sponsors</h2><p class="sponsor-text">We gratefully acknowledge the generous support of our sponsors who make this workshop and its awards possible.</p><div class="sponsor-logo-display"><div class="sponsor-tier">Workshop Sponsor</div><img src="assets/images/meitu_logo.png" alt="Meitu" style="max-height:50px"/></div><br><p class="sponsor-text">Interested in supporting the intersection of AI and visual arts? We welcome partners who share our vision for trustworthy, human-aligned AI in creative domains.</p><a href="/cdn-cgi/l/email-protection#56323464626060163437223e78373578233d" class="btn-sponsor">Get in Touch</a></section>
+        <!-- Registration Requirement -->
+        <div class="poster-warning" style="margin-bottom:2rem;">
+            <strong>Registration requirement:</strong> Each accepted archival paper must be registered under an author registration by <strong>May 5, 2026</strong> or the paper will be eliminated from the proceedings. No exceptions. Non-archival papers do not need to be captured under an author registration.
+        </div>
 
-    <section id="contact"><span class="section-label" style="justify-content: center;">Contact</span><h2 class="section-title" style="text-align: center; max-width: none;">Questions?</h2><a href="/cdn-cgi/l/email-protection#83e7e1b1b7b5b5c3e1e2f7ebade2e0adf6e8" class="contact-email">db2466[at]bath[dot]ac[dot]uk</a></section>
+        <!-- Presentation Guidelines (corrected dimensions) -->
+        <div class="presentation-info"><div class="presentation-icon">◎</div><div><h4>Presentation Guidelines</h4><p>All posters: <strong>42″ × 21″ (W × H, aspect ratio 2:1, landscape format)</strong>. All accepted papers present a poster. Selected oral spotlight presenters: 7 min presentation + 3 min Q&amp;A, plus poster presentation.</p></div></div>
+
+        <!-- Poster Information -->
+        <div class="poster-info-block">
+            <h4>General Poster Information</h4>
+            <p>Posters will be: <strong>42″ × 21″ (W × H, aspect ratio 2:1, landscape format)</strong>.</p>
+            <p>Logos and poster templates for Main + Findings &amp; Workshops can be found at <a href="https://drive.google.com/drive/folders/1oaXlMOJzWMYUiFBImMepKsZcoicpks8Z" target="_blank">Google Drive →</a></p>
+            <p>Feel free to use your own artwork, but we recommend a <strong>3 or 4 column layout</strong>, and to use little text and few large but expressive figures on your poster. The poster should not be a copy-paste of your paper but provide you the "tools" to give a 5–10 minute presentation of your work to any attendee. We recommend looking at posters from previous years for inspiration. Templates and logos posted above.</p>
+
+            <h4>Poster Printing Information</h4>
+            <p>CVPR 2026 offers a poster printing service for attendees who would like to collect their printed poster onsite at the Denver Convention Center. The link is active now:</p>
+            <p><a href="https://cvprus.myprintdesk.net/login" target="_blank">https://cvprus.myprintdesk.net/login</a></p>
+            <p>You will be prompted during the order process to enter the presenter's name and contact information; make sure you have this information correct. It is very important to enter accurate information for proper distribution of the posters. Please list the <strong>Workshop</strong> and your <strong>paper ID number</strong> along with your <strong>full name</strong>.</p>
+            <p>All posters are printed on 8mil Satin Poster Paper, Full Colour and Single Sided. Posters are delivered rolled and delivery to the convention center is included. A <strong>PDF file is preferred</strong>. 100 DPI or vector art at full size is recommended but the file will automatically be scaled if needed. Please do not include bleed.</p>
+
+            <div class="poster-pricing-grid">
+                <div class="poster-price-card"><div class="price-tier">Early Bird</div><div class="price-amount">$55</div><div class="price-note">Standard rate</div></div>
+                <div class="poster-price-card"><div class="price-tier">Rush</div><div class="price-amount">$77</div><div class="price-note">After May 17, 2026 5 PM EST</div></div>
+                <div class="poster-price-card"><div class="price-tier">Express</div><div class="price-amount">$121</div><div class="price-note">After May 24, 2026 5 PM EST</div></div>
+            </div>
+
+            <p><strong>Online orders will close Friday, May 29 at 12:00 PM EST.</strong></p>
+            <p>Local orders for Workshop Posters from ARC Denver are <strong>not</strong> available.</p>
+
+            <div class="poster-warning">
+                Put your <strong>FULL NAME</strong>, <strong>Workshop acronym</strong>, and <strong>PAPER ID Number</strong> at the Job Name when submitting the poster. Please note the earliest date you need your poster.<br><br>
+                <strong>UPLOADED FILE IS FINAL. FILE CHANGES NOT POSSIBLE!</strong>
+            </div>
+
+            <h4>Poster Pickup Hours — Exhibit Hall A</h4>
+            <table class="poster-pickup-table">
+                <thead><tr><th>Dates</th><th>Hours</th></tr></thead>
+                <tbody>
+                    <tr><td>Wednesday, June 3 &amp; Thursday, June 4</td><td>7:30 AM – 3:00 PM</td></tr>
+                    <tr><td>Friday, June 5 – Sunday, June 7</td><td>7:30 AM – 5:00 PM</td></tr>
+                </tbody>
+            </table>
+            <p>Once you pick up your poster, it is your responsibility. CVPR will not hold your poster for you. Please remember to <strong>remove your poster at the end of your session</strong> or it will be discarded.</p>
+
+            <h4>Questions &amp; Support</h4>
+            <div class="poster-contact-grid">
+                <div class="poster-contact-card">
+                    <h5>Pre-Submission Questions</h5>
+                    <p>Marissa — <a href="mailto:marissa@ctocevents.com">marissa@ctocevents.com</a></p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">For questions <em>before</em> submission only. Printer questions will not be answered at this address.</p>
+                </div>
+                <div class="poster-contact-card">
+                    <h5>Order &amp; Production Questions</h5>
+                    <p>RiotColor — <a href="mailto:riotmax@riotcolor.com">riotmax@riotcolor.com</a></p>
+                    <p>Phone: 410-992-9898</p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Please have your order number ready.</p>
+                </div>
+            </div>
+            <div class="poster-contact-grid" style="margin-top:0.75rem;">
+                <div class="poster-contact-card">
+                    <h5>Website &amp; Tech Support</h5>
+                    <p>DSF Team — <a href="mailto:dsf.team@e-arc.com">dsf.team@e-arc.com</a></p>
+                    <p>Phone: 866-414-6967</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="committee"><span class="section-number">10</span><span class="section-label">Organizers</span><h2 class="section-title">Organizing Committee</h2><div class="organizers-grid"><div class="organizer-card"><img class="organizer-photo" src="assets/images/deblina_bhattacharjee.jpeg" alt="Deblina Bhattacharjee" /><span class="organizer-role">Lead Organizer</span><h4 class="organizer-name">Deblina Bhattacharjee</h4><p class="organizer-affiliation">Assistant Professor, University of Bath, UK (Publicity Co-Chair, CVPR)</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/yin_zhang.jpeg" alt="Yin Zhang" /><span class="organizer-role">Organizer</span><h4 class="organizer-name"><a href="https://www.linkedin.com/in/yinzhang-unige/" target="_blank">Iris (Yin) Zhang</a></h4><p class="organizer-affiliation">PhD in Translation Studies, University of Geneva</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/bingchen_zhao.png" alt="Bingchen Zhao" /><span class="organizer-role">Organizer</span><h4 class="organizer-name"><a href="https://bzhao.me/" target="_blank">Bingchen Zhao</a></h4><p class="organizer-affiliation">PhD in Computer Science, University of Edinburgh</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/Haoxiang_Li.jpeg" alt="Haoxiang Li" /><span class="organizer-role">Challenge Co-Organizer</span><h4 class="organizer-name"><a href="https://resume.haoxiang.org" target="_blank">Haoxiang Li</a></h4><p class="organizer-affiliation">Meitu Inc. (Pixocial Technology)</p></div><div class="organizer-card"><img class="organizer-photo" src="assets/images/Luoqi_Li.jpeg" alt="Luoqi Liu" /><span class="organizer-role">Challenge Co-Organizer</span><h4 class="organizer-name"><a href="https://scholar.google.com/citations?user=nw4XTwMAAAAJ&amp;hl=en" target="_blank">Luoqi Liu</a></h4><p class="organizer-affiliation">VP of Technology, Meitu Inc.</p></div></div></section>
+
+    <section id="sponsors"><span class="section-label">Support</span><h2 class="section-title">Sponsors</h2><p class="sponsor-text">We gratefully acknowledge the generous support of our sponsors who make this workshop and its awards possible.</p><div class="sponsor-logo-display"><div class="sponsor-tier">Workshop Sponsor</div><img src="assets/images/meitu_logo.png" alt="Meitu" style="max-height:50px"/></div><br><p class="sponsor-text">Interested in supporting the intersection of AI and visual arts? We welcome partners who share our vision for trustworthy, human-aligned AI in creative domains.</p><a href="mailto:db2466@bath.ac.uk" class="btn-sponsor">Get in Touch</a></section>
+
+    <section id="contact"><span class="section-label" style="justify-content: center;">Contact</span><h2 class="section-title" style="text-align: center; max-width: none;">Questions?</h2><a href="mailto:db2466@bath.ac.uk" class="contact-email">db2466[at]bath[dot]ac[dot]uk</a></section>
 
     <footer><div class="footer-left">© 2026 AI for Visual Arts Workshop</div><div class="footer-logo">AI4VA</div><div class="footer-right"><a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026 ↗</a></div></footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const cursor=document.getElementById('cursor');let mouseX=0,mouseY=0,cursorX=0,cursorY=0;document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});function animateCursor(){cursorX+=(mouseX-cursorX)*0.15;cursorY+=(mouseY-cursorY)*0.15;cursor.style.left=cursorX+'px';cursor.style.top=cursorY+'px';requestAnimationFrame(animateCursor)}animateCursor();
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
         const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}})},{threshold:0.1,rootMargin:'0px 0px -80px 0px'});
-        document.querySelectorAll('.manifesto-card,.topic-cell,.timeline-item,.track,.speaker-card,.organizer-card,.award-card,.challenge-track-card,.challenge-figure,.challenge-subsection').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.8s ease, transform 0.8s ease';observer.observe(el)});
-        document.addEventListener('mousemove',e=>{const strokes=document.querySelectorAll('.paint-stroke');const x=(e.clientX/window.innerW
+        document.querySelectorAll('.manifesto-card,.topic-cell,.timeline-item,.track,.speaker-card,.organizer-card,.award-card,.challenge-track-card,.challenge-figure,.challenge-subsection,.poster-info-block,.poster-price-card,.poster-contact-card,.program-table tr').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.8s ease, transform 0.8s ease';observer.observe(el)});
+        document.addEventListener('mousemove',e=>{const strokes=document.querySelectorAll('.paint-stroke');const x=(e.clientX/window.innerWidth-0.5)*30;const y=(e.clientY/window.innerHeight-0.5)*30;strokes.forEach((stroke,i)=>{const speed=(i+1)*0.5;stroke.style.transform=`translate(${x*speed}px, ${y*speed}px)`})});
+    </script>
+</body>
+</html>

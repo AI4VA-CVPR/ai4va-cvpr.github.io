@@ -208,6 +208,16 @@
         .poster-contact-card h5 { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ochre); margin-bottom: 0.5rem; }
         .poster-contact-card p { font-size: 0.95rem; color: var(--text); line-height: 1.65; margin-bottom: 0.25rem; }
 
+        /* ── POSTER BOARD ASSIGNMENTS ── */
+        .board-assign-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .board-assign-table th { font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochre); text-align: left; padding: 0.7rem 1rem; border-bottom: 2px solid var(--ochre); }
+        .board-assign-table td { padding: 0.85rem 1rem; vertical-align: top; border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
+        .board-assign-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .board-assign-table .ba-board { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--vermillion); white-space: nowrap; width: 90px; }
+        .board-assign-table .ba-posters { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.55; color: var(--text-bright); }
+        .board-assign-table .ba-posters .ba-paper { display: block; padding: 0.15rem 0; }
+        .board-assign-table .ba-posters a { font-size: 1em; }
+
         /* ── PROGRAM ── */
         #program { background: var(--bg); position: relative; }
         #program .section-label { color: var(--vermillion); }
@@ -426,6 +436,7 @@
             .challenge-timeline { grid-template-columns: 1fr; }
             .challenge-timeline-item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
             .challenge-figure .img-frame { height: 260px; }
+            .board-assign-table .ba-board { width: auto; }
         }
     </style>
 </head>
@@ -640,6 +651,67 @@
 
         <!-- Presentation Guidelines (corrected dimensions) -->
         <div class="presentation-info"><div class="presentation-icon">◎</div><div><h4>Presentation Guidelines</h4><p>All posters: <strong>42″ × 21″ (W × H, aspect ratio 2:1, landscape format)</strong>. All accepted papers present a poster. Selected oral spotlight presenters will deliver 7 min presentation + 3 min Q&amp;A, plus poster presentation.</p></div></div>
+
+        <!-- Poster Board Assignments -->
+        <div class="poster-info-block">
+            <h4>Poster Board Assignments</h4>
+            <p>All posters are in <strong>Exhibit Hall A</strong>. The boards will be available during <strong>10:00 to 11:00</strong>. A reminder that <strong>each board face is for two posters</strong>. The assignments are as follows:</p>
+            <table class="board-assign-table">
+                <thead><tr><th>Board</th><th>Poster(s)</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="ba-board">100</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">Enhancing Spatial Understanding in Vision-Language Segmentation via Diffusion-Based Pipelines</span>
+                            <span class="ba-paper">Form and Void: Entangled Composition through an Autonomous AI Agent</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">101</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">Conversational Inquiry vs. Explanatory Narration: How AI Mediation Shapes Viewer Engagement with Art</span>
+                            <span class="ba-paper">Attention-Enhanced Multi-ControlNet for Artist-Aligned Manga Background Generation</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">102</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">The Abstraction Gap: A Spectral Theory of Vision Encoder Robustness to Artistic Stylization</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">103</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">The RenAIssance: Style-Consistent Generation of Classical Aesthetics using BLIP and LoRA-Adapted Stable Diffusion</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">104</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">The Artist's Mandate: Human-Aligned Adversarial Protection for Provenance</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">105</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">Teaching an Agent to Sketch One Part at a Time</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">106</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">Sculpting Equations, Not Pixels: Data-Free Generative Aesthetics with StackGPArt</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ba-board">107</td>
+                        <td class="ba-posters">
+                            <span class="ba-paper">PainterBench: Benchmarking Controllability in Image Generation with Painter-Aligned Metrics</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Poster Information -->
         <div class="poster-info-block">

@@ -134,6 +134,25 @@
         .topic-name { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.45; color: rgba(255,255,255,0.75); transition: color 0.4s ease; }
         .topic-cell:hover .topic-name { color: var(--white); }
 
+        /* ── AWARD WINNERS (congratulations) ── */
+        #award-winners { background: var(--bg-alt); position: relative; }
+        #award-winners .section-label { color: var(--ochre); }
+        #award-winners .section-label::before { background: var(--ochre); }
+        .winners-intro { font-size: 1.25rem; line-height: 1.85; color: var(--text); max-width: 760px; margin-bottom: 2rem; }
+        .winners-intro strong { color: var(--text-bright); }
+        .winners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .winner-card { padding: 2.5rem; background: var(--bg-surface); border: 1px solid var(--border); position: relative; overflow: hidden; transition: all 0.4s ease; }
+        .winner-card::before { content:''; position: absolute; top: 0; left: 0; width:100%; height: 3px; background: linear-gradient(90deg, var(--ochre), var(--vermillion)); }
+        .winner-card.poster::before { background: linear-gradient(90deg, var(--vermillion), var(--violet)); }
+        .winner-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .winner-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .winner-award-name { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ochre); margin-bottom: 0.25rem; }
+        .winner-card.poster .winner-award-name { color: var(--vermillion); }
+        .winner-amount { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1.1rem; }
+        .winner-paper-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; font-style: italic; color: var(--text-bright); line-height: 1.35; margin-bottom: 0.75rem; }
+        .winner-authors { font-family: 'Space Mono', monospace; font-size: 0.85rem; letter-spacing: 0.03em; color: var(--text); line-height: 1.7; }
+        .winner-sponsor-tag { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
         /* ── DATES ── */
         #dates { background: var(--bg-alt); position: relative; }
         .dates-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; margin-top: 2.5rem; }
@@ -254,6 +273,7 @@
         .papers-list li:last-child { border-bottom: none; }
         .papers-list li::marker { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--vermillion); font-weight: 700; }
         .papers-list li:hover { padding-left: 0.75rem; background: rgba(255,255,255,0.02); }
+        .paper-authors { display: block; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.02em; color: var(--text-muted); line-height: 1.6; margin-top: 0.3rem; }
         .papers-empty-note { margin-top: 1.5rem; padding: 1.25rem; background: rgba(201,162,39,0.06); border-left: 3px solid var(--ochre); font-style: italic; color: var(--text-muted); font-size: 1.05rem; }
 
         /* ── LOGISTICS ── */
@@ -418,6 +438,7 @@
             .speakers-grid { grid-template-columns: repeat(2, 1fr); }
             .organizers-grid { grid-template-columns: repeat(2, 1fr); }
             .awards-grid { grid-template-columns: 1fr; }
+            .winners-grid { grid-template-columns: 1fr; }
             .challenge-figure-row { grid-template-columns: 1fr; }
             .challenge-awards-grid { grid-template-columns: 1fr; }
             .pc-header { flex-direction: column; text-align: center; }
@@ -445,7 +466,7 @@
     <nav>
         <div class="nav-logo">AI4VA</div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li><li><a href="#topics">Topics</a></li><li><a href="#dates">Dates</a></li><li><a href="#program">Program</a></li><li><a href="#participate">Papers</a></li><li><a href="#papers-accepted">Accepted</a></li><li><a href="#challenges">Challenges</a></li><li><a href="#awards">Awards</a></li><li><a href="#speakers">Speakers</a></li><li><a href="#logistics">Logistics</a></li><li><a href="#committee">Committee</a></li><li><a href="#sponsors">Sponsors</a></li><li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li><li><a href="#topics">Topics</a></li><li><a href="#award-winners">Winners</a></li><li><a href="#dates">Dates</a></li><li><a href="#program">Program</a></li><li><a href="#participate">Papers</a></li><li><a href="#papers-accepted">Accepted</a></li><li><a href="#challenges">Challenges</a></li><li><a href="#awards">Awards</a></li><li><a href="#speakers">Speakers</a></li><li><a href="#logistics">Logistics</a></li><li><a href="#committee">Committee</a></li><li><a href="#sponsors">Sponsors</a></li><li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -497,6 +518,32 @@
         </div>
     </section>
 
+    <!-- ════════ AWARD WINNERS — CONGRATULATIONS ════════ -->
+    <section id="award-winners">
+        <span class="section-number">★</span>
+        <span class="section-label">Congratulations</span>
+        <h2 class="section-title">Award Winners</h2>
+        <p class="winners-intro">Congratulations to the recipients of the <strong>Best Paper</strong> and <strong>Best Poster</strong> awards at the 3rd AI for Visual Arts Workshop. We thank all authors for their outstanding contributions, and our sponsor <strong>Meitu</strong> for making these awards possible.</p>
+        <div class="winners-grid">
+            <div class="winner-card paper">
+                <div class="winner-icon">🏆</div>
+                <div class="winner-award-name">Best Paper Award</div>
+                <div class="winner-amount">$1,000 · Sponsored by Meitu</div>
+                <div class="winner-paper-title">Form and Void: Entangled Composition through an Autonomous AI Agent</div>
+                <div class="winner-authors">Shiwen Wang, Jian Yang, Xu Wang, Xincan Wang, Weiming Dong</div>
+                <div class="winner-sponsor-tag">Archival Full Paper</div>
+            </div>
+            <div class="winner-card poster">
+                <div class="winner-icon">🎖️</div>
+                <div class="winner-award-name">Best Poster Award</div>
+                <div class="winner-amount">$500 · Sponsored by Meitu</div>
+                <div class="winner-paper-title">Attention-Enhanced Multi-ControlNet for Artist-Aligned Manga Background Generation</div>
+                <div class="winner-authors">Louis King</div>
+                <div class="winner-sponsor-tag">Archival Full Paper</div>
+            </div>
+        </div>
+    </section>
+
     <section id="dates">
         <span class="section-number">03</span><span class="section-label">Timeline</span>
         <h2 class="section-title">Important Dates</h2>
@@ -541,16 +588,12 @@
                 <td><div class="prog-session">Award Ceremony</div></td>
             </tr>
             <tr class="prog-break">
-                <td class="prog-time">10:05 – 11:00</td>
+                <td class="prog-time">10:05 – 11:25</td>
                 <td><div class="prog-session">Coffee Break &amp; Poster Session (Exhibit Hall A)</div></td>
             </tr>
             <tr>
-                <td class="prog-time">11:00 – 11:25</td>
-                <td><div class="prog-session">Keynote 3 — Ranjay Krishna</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
-            </tr>
-            <tr>
                 <td class="prog-time">11:25 – 11:50</td>
-                <td><div class="prog-session">Keynote 4 — Pinar Yanardag</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
+                <td><div class="prog-session">Keynote 3 — Pinar Yanardag</div><div class="prog-detail">20 min talk + 5 min Q&amp;A</div></td>
             </tr>
             <tr>
                 <td class="prog-time">11:50 – 12:10</td>
@@ -573,7 +616,7 @@
         <div class="timeline-notice" style="margin-top:1.5rem;">Submissions for both tracks are now closed. Thank you to all authors who submitted their work.</div>
     </section>
 
-    <!-- ════════ ACCEPTED PAPERS — PLACEHOLDER, AWAITING CSV ════════ -->
+    <!-- ════════ ACCEPTED PAPERS ════════ -->
     <section id="papers-accepted">
         <span class="section-number">06</span><span class="section-label">Proceedings</span>
         <h2 class="section-title">Accepted Papers</h2>
@@ -582,22 +625,22 @@
         <div class="papers-group">
             <h3 class="papers-group-title">Full Papers — Archival</h3>
             <ol class="papers-list">
-                <li>Enhancing Spatial Understanding in Vision-Language Segmentation via Diffusion-Based Pipelines</li>
-                <li>Form and Void: Entangled Composition through an Autonomous AI Agent</li>
-                <li>Conversational Inquiry vs. Explanatory Narration: How AI Mediation Shapes Viewer Engagement with Art</li>
-                <li>Attention-Enhanced Multi-ControlNet for Artist-Aligned Manga Background Generation</li>
+                <li>Enhancing Spatial Understanding in Vision-Language Segmentation via Diffusion-Based Pipelines<span class="paper-authors">Filippo Santiano, Zejun Zhang, Deblina Bhattacharjee</span></li>
+                <li>Form and Void: Entangled Composition through an Autonomous AI Agent<span class="paper-authors">Shiwen Wang, Jian Yang, Xu Wang, Xincan Wang, Weiming Dong</span></li>
+                <li>Conversational Inquiry vs. Explanatory Narration: How AI Mediation Shapes Viewer Engagement with Art<span class="paper-authors">Blessin Varkey, Shrayon Bose, Akash Mohan, Kalipatnapu Sarma, Vikram Jamwal, Anil Sharma</span></li>
+                <li>Attention-Enhanced Multi-ControlNet for Artist-Aligned Manga Background Generation<span class="paper-authors">Louis King</span></li>
             </ol>
         </div>
 
         <div class="papers-group">
             <h3 class="papers-group-title">Extended Abstracts — Non-Archival</h3>
             <ol class="papers-list">
-                <li>The Abstraction Gap: A Spectral Theory of Vision Encoder Robustness to Artistic Stylization</li>
-                <li>The RenAIssance: Style-Consistent Generation of Classical Aesthetics using BLIP and LoRA-Adapted Stable Diffusion</li>
-                <li>The Artist's Mandate: Human-Aligned Adversarial Protection for Provenance</li>
-                <li>Teaching an Agent to Sketch One Part at a Time</li>
-                <li>Sculpting Equations, Not Pixels: Data-Free Generative Aesthetics with StackGPArt</li>
-                <li>PainterBench: Benchmarking Controllability in Image Generation with Painter-Aligned Metrics</li>
+                <li>The Abstraction Gap: A Spectral Theory of Vision Encoder Robustness to Artistic Stylization<span class="paper-authors">Kaustubh Bukkapatnam, Siddharth Karuturi</span></li>
+                <li>The RenAIssance: Style-Consistent Generation of Classical Aesthetics using BLIP and LoRA-Adapted Stable Diffusion<span class="paper-authors">TUO Zhanyu</span></li>
+                <li>The Artist's Mandate: Human-Aligned Adversarial Protection for Provenance<span class="paper-authors">Nese Alyuz, Sinem Aslan, Ilke Demir</span></li>
+                <li>Teaching an Agent to Sketch One Part at a Time<span class="paper-authors">Xiaodan Du, Ruize Xu, David Yunis, Yael Vinker, Greg Shakhnarovich</span></li>
+                <li>Sculpting Equations, Not Pixels: Data-Free Generative Aesthetics with StackGPArt<span class="paper-authors">Ruchika Gupta, Wolfgang Banzhaf</span></li>
+                <li>PainterBench: Benchmarking Controllability in Image Generation with Painter-Aligned Metrics<span class="paper-authors">Jeffrey Liu, Surendra Pathak</span></li>
             </ol>
         </div>
     </section>
@@ -638,7 +681,7 @@
 
     <section id="awards"><span class="section-number">08</span><span class="section-label">Recognition</span><h2 class="section-title">Workshop Awards</h2><div class="awards-grid"><div class="award-card"><div class="award-icon">🏆</div><h3>Best Paper Award</h3><div class="award-amount">$1,000</div><p>Awarded to the highest-quality full paper submission demonstrating novelty, rigour, and impact at the intersection of AI and visual arts.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div><div class="award-card"><div class="award-icon">🎖️</div><h3>Best Poster Award</h3><div class="award-amount">$500</div><p>Awarded for an outstanding poster presentation that effectively communicates innovative research to the workshop audience.</p><div class="award-sponsor-tag">Sponsored by Meitu</div></div></div><div class="awards-ceremony-note">All winners will be felicitated in the workshop award ceremony with certificates.</div></section>
 
-    <section id="speakers"><span class="section-number">09</span><span class="section-label">Keynotes</span><h2 class="section-title">Invited Speakers</h2><div class="speakers-grid"><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/Hadar.jpeg" alt="Hadar Averbuch-Elor" /></div><h4 class="speaker-name"><a href="https://www.hadarelor.com/" target="_blank">Hadar Averbuch-Elor</a></h4><p class="speaker-affiliation">Cornell University &amp; Cornell Tech</p><p class="speaker-bio">Assistant Professor in Computer Science. Her research combines images, language and 3D geometry for building multimodal perception systems that can handle the full complexity of the real 3D world.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/ranjay_krishna.jpeg" alt="Ranjay Krishna" /></div><h4 class="speaker-name"><a href="https://www.ranjaykrishna.com/index.html" target="_blank">Ranjay Krishna</a></h4><p class="speaker-affiliation">University of Washington &amp; Allen Institute for AI</p><p class="speaker-bio">Assistant Professor at the Allen School. Co-directs the RAIVN lab at UW and directs the PRIOR team at AI2. His research lies at the intersection of computer vision, NLP, robotics, and HCI.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/luba_elliott.png" alt="Luba Elliott" /></div><h4 class="speaker-name"><a href="https://elluba.com/about/" target="_blank">Luba Elliott</a></h4><p class="speaker-affiliation">Curator &amp; Researcher, Creative AI</p><p class="speaker-bio">Curator, producer and researcher specialising in AI in the creative industries. Organising Committee of CVPR leading the CVPR Art Gallery each year.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/pinar_yanardag.jpeg" alt="Pinar Yanardag" /></div><h4 class="speaker-name"><a href="https://pinguar.org/" target="_blank">Pinar Yanardag</a></h4><p class="speaker-affiliation">Virginia Tech</p><p class="speaker-bio">Assistant Professor of Computer Science at Virginia Tech, leading GEMLAB on controllable, personalized generative AI. Previously a Fulbright PhD Fellow at Purdue and postdoc at MIT Media Lab. NSF CAREER awardee; Emmy-nominated Creative Director for HBO's Westworld.</p></div></div></section>
+    <section id="speakers"><span class="section-number">09</span><span class="section-label">Keynotes</span><h2 class="section-title">Invited Speakers</h2><div class="speakers-grid"><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/Hadar.jpeg" alt="Hadar Averbuch-Elor" /></div><h4 class="speaker-name"><a href="https://www.hadarelor.com/" target="_blank">Hadar Averbuch-Elor</a></h4><p class="speaker-affiliation">Cornell University &amp; Cornell Tech</p><p class="speaker-bio">Assistant Professor in Computer Science. Her research combines images, language and 3D geometry for building multimodal perception systems that can handle the full complexity of the real 3D world.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/luba_elliott.png" alt="Luba Elliott" /></div><h4 class="speaker-name"><a href="https://elluba.com/about/" target="_blank">Luba Elliott</a></h4><p class="speaker-affiliation">Curator &amp; Researcher, Creative AI</p><p class="speaker-bio">Curator, producer and researcher specialising in AI in the creative industries. Organising Committee of CVPR leading the CVPR Art Gallery each year.</p></div><div class="speaker-card"><span class="speaker-status confirmed">Confirmed</span><div class="speaker-avatar"><img src="assets/images/pinar_yanardag.jpeg" alt="Pinar Yanardag" /></div><h4 class="speaker-name"><a href="https://pinguar.org/" target="_blank">Pinar Yanardag</a></h4><p class="speaker-affiliation">Virginia Tech</p><p class="speaker-bio">Assistant Professor of Computer Science at Virginia Tech, leading GEMLAB on controllable, personalized generative AI. Previously a Fulbright PhD Fellow at Purdue and postdoc at MIT Media Lab. NSF CAREER awardee; Emmy-nominated Creative Director for HBO's Westworld.</p></div></div></section>
 
     <section id="logistics">
         <span class="section-number">10</span><span class="section-label">Attending</span>
@@ -786,7 +829,7 @@
         const cursor=document.getElementById('cursor');let mouseX=0,mouseY=0,cursorX=0,cursorY=0;document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});function animateCursor(){cursorX+=(mouseX-cursorX)*0.15;cursorY+=(mouseY-cursorY)*0.15;cursor.style.left=cursorX+'px';cursor.style.top=cursorY+'px';requestAnimationFrame(animateCursor)}animateCursor();
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
         const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}})},{threshold:0.1,rootMargin:'0px 0px -80px 0px'});
-        document.querySelectorAll('.manifesto-card,.topic-cell,.timeline-item,.track,.speaker-card,.organizer-card,.award-card,.challenge-track-card,.challenge-figure,.challenge-subsection,.poster-info-block,.poster-price-card,.poster-contact-card,.program-table tr,.papers-list li').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.8s ease, transform 0.8s ease';observer.observe(el)});
+        document.querySelectorAll('.manifesto-card,.topic-cell,.timeline-item,.track,.speaker-card,.organizer-card,.award-card,.winner-card,.challenge-track-card,.challenge-figure,.challenge-subsection,.poster-info-block,.poster-price-card,.poster-contact-card,.program-table tr,.papers-list li').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.8s ease, transform 0.8s ease';observer.observe(el)});
         document.addEventListener('mousemove',e=>{const strokes=document.querySelectorAll('.paint-stroke');const x=(e.clientX/window.innerWidth-0.5)*30;const y=(e.clientY/window.innerHeight-0.5)*30;strokes.forEach((stroke,i)=>{const speed=(i+1)*0.5;stroke.style.transform=`translate(${x*speed}px, ${y*speed}px)`})});
     </script>
 </body>
